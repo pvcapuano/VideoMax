@@ -1,17 +1,15 @@
 import { useEffect, useState } from "react";
 import api from "../../services/api";
 import { Link } from "react-router-dom";
-import "./home.css";
+import "./filmes.css";
 
-//URL API: /movie/now_playing?api_key=1dfa62bb1b83007161dcee66d24b55b8
-
-const Home = () => {
+const Filmes = () => {
   const [filmes, setFilmes] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function loadFilmes() {
-      const response = await api.get("/movie/now_playing", {
+      const response = await api.get("/movie/top_rated", {
         params: {
           api_key: "1dfa62bb1b83007161dcee66d24b55b8",
           language: "pt-BR",
@@ -56,4 +54,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Filmes;

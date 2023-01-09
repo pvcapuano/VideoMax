@@ -6,6 +6,9 @@ import Filme from "./pages/Filme";
 import Header from "./components/Header";
 import Erro from "./pages/Erro";
 import Favoritos from "./pages/Favoritos";
+import Series from "./pages/Series";
+import Serie from "./pages/Serie";
+import Filmes from "./pages/Filmes";
 
 const RoutesApp = () => {
   return (
@@ -13,7 +16,10 @@ const RoutesApp = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/filmes" element={<Filmes />} />
+        <Route path="/series" element={<Series />} />
         <Route path="/filme/:id" element={<Filme />} />
+        <Route path="/serie/:id" element={<Serie />} />
         <Route path="/favoritos" element={<Favoritos />} />
 
         <Route path="*" element={<Erro />} />

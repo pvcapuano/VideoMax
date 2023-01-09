@@ -48,7 +48,7 @@ const Filme = () => {
 
     filmesSalvos.push(filme);
     localStorage.setItem("favoritos", JSON.stringify(filmesSalvos));
-    toast.success("Video salvo com sucesso!");
+    toast.success("Filme salvo com sucesso!");
   }
 
   if (loading) {
@@ -71,7 +71,7 @@ const Filme = () => {
       <h3>Sinopse:</h3>
       <span>{filme.overview}</span>
 
-      <strong>Nota: {filme.vote_average} / 10</strong>
+      <strong>Nota: {filme.vote_average.toFixed(1)} / 10</strong>
 
       <div className="area-buttons">
         <button onClick={salvarFilme}>Salvar</button>
